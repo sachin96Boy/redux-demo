@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   Avatar,
   AvatarBadge,
@@ -20,8 +18,12 @@ import {
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 
 import LogoImage from "../../assets/sachin-catering-logo.png";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 function Navbar() {
+  const { amount } = useSelector((state: RootState) => state.cart);
+
   return (
     <Box as="nav" w={"full"}>
       <Flex
@@ -42,7 +44,9 @@ function Navbar() {
         <HStack spacing={"16px"} align={"center"}>
           <Box>
             <Avatar bg={"purple"} icon={<FaShoppingCart />}>
-              <AvatarBadge bg={"green"} boxSize={"1.6rem"} />
+              <AvatarBadge bg={"green"} boxSize={"2rem"}>
+                <Center p={2}>{amount}</Center>
+              </AvatarBadge>
             </Avatar>
           </Box>
           <Menu>

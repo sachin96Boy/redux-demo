@@ -1,17 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
+import cartItems from '../../../cartItems';
 
 // import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface cartState {
-    cartItems: [];
+    cartItems: { id: string; title: string; price: string; img: string; amount: number; }[];
     amount: number;
     total: number;
     isLoading: boolean;
 }
 
 const initialState: cartState = {
-    cartItems: [],
-    amount: 0,
+    cartItems: cartItems,
+    amount: cartItems.length,
     total: 0,
     isLoading: true
 }
@@ -22,7 +23,7 @@ export const cartSlice = createSlice({
     reducers: {
 
     }
-}); 
+});
 
 // Action creators are generated for each case reducer function
 // export const { increment, decrement, incrementByAmount } = counterSlice.actions
