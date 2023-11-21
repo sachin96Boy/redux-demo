@@ -1,10 +1,11 @@
-import { Box, Text } from "@chakra-ui/react";
-import "./App.css";
+import { Box } from "@chakra-ui/react";
+
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <Box>
-      <Text>Hello world</Text>
+    <Box w={"full"}>
+      <Navbar />
     </Box>
   );
 }
